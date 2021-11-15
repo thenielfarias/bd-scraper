@@ -430,13 +430,11 @@ def sendMail():
         sender_email = "daniel.farias@decolar.com"
         password = ""
         receiver_email = emailReport
-        cc_email = "dan.tfarias@gmail.com"
 
         message = MIMEMultipart()
 
         message["From"] = sender_email
         message["To"] = receiver_email
-        message["Cc"] = cc_email
         message["Subject"] = subject
 
         message.attach(MIMEText(body, "plain"))
@@ -460,7 +458,7 @@ def sendMail():
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
             server.login(sender_email, password)
-            server.sendmail(sender_email, receiver_email, cc_email, text)
+            server.sendmail(sender_email, receiver_email, text)
         
         print(f'\033[36mE-mail enviado com sucesso!\033[m')
     except:
