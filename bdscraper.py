@@ -460,7 +460,7 @@ def sendMail():
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
             server.login(sender_email, password)
-            server.sendmail(sender_email, receiver_email, text)
+            server.sendmail(sender_email, receiver_email, cc_email, text)
         
         print(f'\033[36mE-mail enviado com sucesso!\033[m')
     except:
