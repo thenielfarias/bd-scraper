@@ -6,6 +6,8 @@ import os
 #os.system('pip install unidecode')
 #os.system('pip install arrow')
 #os.system('pip install pandas')
+#os.system('pip install Jinja2')
+#os.system('pip install openpyxl')
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
